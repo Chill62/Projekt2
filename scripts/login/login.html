@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../../includes/style.css">
+    <link rel="stylesheet" href="../signup/signup.css">
+    <link rel="stylesheet" href="../../includes/font.css">
+    <script src="login.js"></script>
+</head>
+<body>
+    <div class="Main">
+        <div class="Container">
+            <div class="Left">
+                <div class="Left-inside">
+                    <h1 class="welcome-back">Welcome back !!!</h1>
+                    <h2 class="log-in-title">Log in</h2>
+                    <form class="login-form" method="POST">
+                        <label for="login">Login</label>
+                        <input type="text" id="login" name="login" placeholder="login@gmail.com" required><br>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="**********" required>
+                        <input type="submit" name="submit" class="login-button" value="Sign-up">
+                        <div class="sign"><p>Don't have an account yet? <a href="../signup/signup.php" class="sign-up">Sign in</a></p></div>
+                    </form>
+                </div>
+            </div>
+            <div class="Right">
+                <div class="error-message"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

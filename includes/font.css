@@ -1,0 +1,16 @@
+@font-face {
+    font-family: kamerik-bold;
+    src: url(./font/Kamerik105-Bold.ttf);
+}
+@font-face {
+    font-family: kamerik-light;
+    src: url(./font/Kamerik105-Light.ttf);
+}
+@font-face {
+    font-family: kamerik-book;
+    src: url(./font/Kamerik105-Book.ttf);
+}
+@font-face {
+    font-family: kamerik-oblique;
+    src: url(./font/Kamerik105-LightOblique.ttf);
+}
