@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Car_rental.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../includes/style.css">
+    <link rel="stylesheet" href="../../includes/font.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="header">
+        <h1>Car Rental United </h1>
+    </div>
+
+    <div class="search-container">
+        <h2>Find Your Rental Car</h2>
+
+        <form method="POST" action="car_rental.php">
+        <div class="search-bar">
+        <input type="number" placeholder="Cost of the car" id="cost" name="cost" required>
+        <input type="text" id="date-range" placeholder="Select Date Range" name="date" required>
+        <select id="car-type" name="car-type">
+            <option value="">All Types</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="truck">Hatchback</option>
+            <option value="convertible">Convertible</option>
+        </select>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+
+    </div>
+    <div class="bottom">
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="Car_rental.js"></script>
+</body>
+</html>
