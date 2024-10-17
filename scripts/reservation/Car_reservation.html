@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../../includes/style.css">
+    <link rel="stylesheet" href="../../includes/font.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="car_reservation.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Car Reservation System</h1>
+        <form action="Car_reservation.php" method="POST">
+            <label for="car">Select Car:</label>
+            <select name="car_id" id="car" required>
+                {{options}}
+            </select>
+            <input type="text" id="date-range" placeholder="Select Date Range" name="date" required>
+            <button type="submit" name="submit">Reserve</button>
+        </form>
+
+        <a href="history/history.php">View Reservation History</a>
+    </div>
+    <div class="er">
+        {{error}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="Car_reservation.js"></script>
+</body>
+</html>

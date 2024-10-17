@@ -1,28 +1,31 @@
 <?php
-include "../../includes/conn.php";
 include "variables.php";
 if (isset($_POST['submit'])) {
     
 
     if (!empty($date_range) && strpos($date_range, ' to ') !== false) {
         list($date_start, $date_end) = explode(' to ', $date_range);
+        
         $sql = "SELECT * FROM car_list 
                 WHERE cost BETWEEN ? AND ? 
                 AND (date_start <= ? AND date_end >= ?)";
+
         if (!empty($car_type)) {
             $sql .= " AND type = ?";
-        }        
-        $sql .= " ORDER BY cost DESC"; 
-
-        $stmt = $conn->prepare($sql);
-        if (!empty($car_type)) {
-            $stmt->bind_param("iisss", $min_cost, $max_cost, $date_end, $date_start, $car_type);
-        } else {
-            $stmt->bind_param("iiss", $min_cost, $max_cost, $date_end, $date_start);
         }
 
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $sql .= " ORDER BY cost DESC"; 
+        $stmt = mysqli_prepare($conn, $sql);
+        
+        if (!empty($car_type)) {
+            mysqli_stmt_bind_param($stmt, "iisss", $min_cost, $max_cost, $date_end, $date_start, $car_type);
+        } else {
+            mysqli_stmt_bind_param($stmt, "iiss", $min_cost, $max_cost, $date_end, $date_start);
+        }
+        mysqli_stmt_execute($stmt);        
+        $result = mysqli_stmt_get_result($stmt);
+    }
+    
 
         if ($result) {
             echo '<div class="container">';
@@ -52,7 +55,6 @@ if (isset($_POST['submit'])) {
     } else {
         echo '<p>Please select a valid date range.</p>';
     }
+    
 
-    $conn->close();
-}
 ?>
